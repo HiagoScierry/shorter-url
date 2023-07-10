@@ -11,7 +11,7 @@ datasource db {
 }
 
 
-model Urls {
+model Url{
   id        String   @id @default(uuid())
   url       String
   createdAt DateTime @default(now())
