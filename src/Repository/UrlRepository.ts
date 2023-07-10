@@ -1,0 +1,3 @@
+class IUrlRepository implements IUrlRepository {
+  // ...
+}
