@@ -1,9 +1,11 @@
 import { IUrlRepository } from "../Interfaces/IUrlRepository";
-import { Url } from "@prisma/client";
+import { PrismaClient, Url } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export class PrismaUrlRepository implements IUrlRepository {
   index(): Promise<Url[]> {
-    throw new Error("Method not implemented.");
+    return prisma.url.findMany();
   }
   show(code: string): Promise<Url | null> {
     throw new Error("Method not implemented.");
