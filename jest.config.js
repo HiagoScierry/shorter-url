@@ -7,9 +7,8 @@ const { compilerOptions } = require("./tsconfig.json");
 module.exports = {
 
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: "<rootDir>/src/",
+    prefix: "<rootDir>/",
   }),
-
   roots: ["<rootDir>"],
   coverageDirectory: "coverage",
   testEnvironment: "node",

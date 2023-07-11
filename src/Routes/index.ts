@@ -9,8 +9,10 @@ router.get("/heath-check", (request: Request, response: Response) => {
   });
 });
 
-router.get("/", UrlController.index);
-router.get("/:code", UrlController.show);
-router.post("/", UrlController.store);
+const urlController = new UrlController();
+
+router.get("/", urlController.index);
+router.get("/:code", urlController.show);
+router.post("/", urlController.store);
 
 export { router };

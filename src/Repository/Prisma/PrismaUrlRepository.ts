@@ -4,13 +4,23 @@ import { PrismaClient, Url } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export class PrismaUrlRepository implements IUrlRepository {
-  index(): Promise<Url[]> {
-    return prisma.url.findMany();
+  async index(): Promise<Url[]> {
+    return await prisma.url.findMany();
   }
-  show(code: string): Promise<Url | null> {
-    throw new Error("Method not implemented.");
+
+  async show(code: string): Promise<Url | null> {
+    return await prisma.url.findUnique({
+      where: {
+        id: code,
+      },
+    });
   }
-  store(url: string): Promise<Url> {
-    throw new Error("Method not implemented.");
+
+  async store(url: Url): Promise<string> {
+    const storageUrl = await prisma.url.create({
+      data: url,
+    });
+
+    return storageUrl.id;
   }
 }

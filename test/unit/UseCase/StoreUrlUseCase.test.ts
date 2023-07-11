@@ -17,6 +17,8 @@ describe("storeUrlUseCase", () => {
     const sizeUrlRepository = await urlRepository.index();
 
     expect(sizeUrlRepository.length).toEqual(1);
+    expect(sizeUrlRepository[0].url).toEqual("https://www.google.com");
+    expect(sizeUrlRepository[0].id.length).toEqual(6);
   });
 
   it("should be return after create two shorted url with the same content return 2", async () => {
@@ -24,8 +26,6 @@ describe("storeUrlUseCase", () => {
     await storeUrlUseCase.execute("https://www.google.com");
 
     const sizeUrlRepository = await urlRepository.index();
-
-    console.log(sizeUrlRepository);
 
     expect(sizeUrlRepository.length).toEqual(2);
     expect(sizeUrlRepository[0].id).not.toEqual(sizeUrlRepository[1].id);
