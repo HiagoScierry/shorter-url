@@ -2,7 +2,7 @@ name: commit-rules
 run-name: Testing if code base follow all rules to deploy
 on: [push]
 jobs: 
-  node setup:
+  Node-Setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
