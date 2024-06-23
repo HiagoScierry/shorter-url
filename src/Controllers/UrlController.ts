@@ -24,7 +24,7 @@ export default class UrlController {
 
     const showUrlUseCase = new ShowUrlUseCase(urlRepository);
 
-    const storageUrl: any = await showUrlUseCase.execute(code);
+    const storageUrl = await showUrlUseCase.execute(code);
 
     if (!storageUrl)
       return response.status(404).json({ error: "Url not found" });
