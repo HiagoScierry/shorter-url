@@ -20,6 +20,6 @@ Nesse desafio você deve criar um servidor que encurte urls e faça redirecionam
 
 ## Implementado a mais
 
-- [ ] Testes Unitários
-- [ ] Testes de Integração
-- [ ] Documentação com Swagger;
+- [x] Testes Unitários
+- [x] Testes de Integração
+- [x] Documentação com Swagger;
