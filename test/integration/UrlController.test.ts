@@ -5,6 +5,12 @@ import { Url } from "@prisma/client";
 import exp from "constants";
 
 describe("UrlController (integration)", () => {
+
+  beforeAll(async () => {
+    // await prisma.url.deleteMany();
+  });
+
+
   describe("GET /", () => {
     afterEach(async () => {
       await prisma.url.deleteMany();
