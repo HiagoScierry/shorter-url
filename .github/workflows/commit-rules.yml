@@ -2,7 +2,6 @@ name: commit-rules
 run-name: Testing if code base follow all rules to deploy
 on: [push]
 jobs: 
-  Node-Setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,6 +9,6 @@ jobs:
         with:
           node-version: '20.x'
       - run: npm install --force
-      - run: npm eslint
-      - run: npm test
+      - run: npm run eslint
+      - run: npm run test
 
