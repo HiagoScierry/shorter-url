@@ -7,7 +7,7 @@ import exp from "constants";
 describe("UrlController (integration)", () => {
 
   beforeAll(async () => {
-    // await prisma.url.deleteMany();
+    await prisma.url.deleteMany();
   });
 
 
