@@ -1,5 +1,5 @@
 name: commit-rules
-run-name: Testing if code base follow all rules to deploy
+run-name: Project Rules apply in ${{ github.head_ref || github.ref_name }}
 
 env:
   DATABASE_URL: file:./dev.db
