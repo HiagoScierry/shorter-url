@@ -1,5 +1,9 @@
 name: commit-rules
 run-name: Testing if code base follow all rules to deploy
+
+env:
+  DATABASE_URL: file:./dev.db
+
 on: [push]
 jobs: 
   Node-Setup:
