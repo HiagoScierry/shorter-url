@@ -9,7 +9,7 @@ export class StoreUrlUseCase {
     this.urlRepository = urlRepository;
   }
 
-  async execute(url: string): Promise<String> {
+  async execute(url: string): Promise<string> {
     const newUrlShortened: Url = {
       id: randomBytes(3).toString("hex"),
       url,
